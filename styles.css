@@ -1,0 +1,234 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #eff6ff;
+            color: #1e293b;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Decorative background gears */
+        .gear {
+            position: fixed;
+            color: #bfdbfe;
+            opacity: 0.55;
+            pointer-events: none;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .gear-one {
+            font-size: 230px;
+            top: 5%;
+            left: 5%;
+            animation: rotate 40s linear infinite;
+        }
+
+        .gear-two {
+            font-size: 170px;
+            bottom: 5%;
+            right: 7%;
+            animation: rotate 30s linear infinite reverse;
+        }
+
+        .gear-three {
+            font-size: 90px;
+            bottom: 15%;
+            left: 15%;
+            animation: rotate 25s linear infinite;
+            opacity: 0.3;
+        }
+
+        /* Main form card */
+        form {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            max-width: 400px;
+            padding: 38px 32px;
+
+            background: #ffffff;
+            border: 1px solid #dbeafe;
+            border-top: 5px solid #2563eb;
+            border-radius: 16px;
+
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.12);
+            text-align: center;
+        }
+
+        .gear-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 72px;
+            height: 72px;
+            margin-bottom: 18px;
+
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 50%;
+
+            color: #2563eb;
+            font-size: 42px;
+
+            animation: rotate 20s linear infinite;
+        }
+
+        h1 {
+            font-size: 25px;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            display: block;
+            width: 100%;
+            padding: 13px 14px;
+            margin-bottom: 18px;
+
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+
+            font-family: inherit;
+            font-size: 14px;
+            color: #1e293b;
+            outline: none;
+
+            transition: border-color 0.2s,
+                        box-shadow 0.2s,
+                        background 0.2s;
+        }
+
+        input[type="text"]::placeholder {
+            color: #94a3b8;
+        }
+
+        input[type="text"]:focus {
+            background: #ffffff;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 14px;
+            margin-top: 4px;
+
+            background: #2563eb;
+            color: #ffffff;
+
+            border: none;
+            border-radius: 8px;
+
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: background 0.2s,
+                        transform 0.2s,
+                        box-shadow 0.2s;
+        }
+
+        input[type="button"]:hover {
+            background: #1d4ed8;
+            box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+            transform: translateY(-2px);
+        }
+
+        input[type="button"]:active {
+            transform: translateY(0);
+        }
+
+        #result {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            max-width: 400px;
+            min-height: 0;
+            margin-top: 18px;
+            padding: 16px;
+
+            background: #ffffff;
+            color: #1e40af;
+
+            border-left: 4px solid #2563eb;
+            border-radius: 8px;
+
+            font-size: 14px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+
+            box-shadow: 0 5px 18px rgba(30, 64, 175, 0.07);
+        }
+
+
+        @media (max-width: 480px) {
+            form {
+                padding: 30px 24px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .gear-one {
+                font-size: 140px;
+                top: 3%;
+                left: -30px;
+            }
+
+            .gear-two {
+                font-size: 120px;
+                bottom: 3%;
+                right: -20px;
+            }
+
+            .gear-three {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
